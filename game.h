@@ -4,32 +4,33 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ROW 5             //ÆåÅÌ´óĞ¡ĞŞ¸Ä
-#define COL 5            //ÆåÅÌ´óĞ¡ĞŞ¸Ä
-//³õÊ¼»¯
+#define ROW 5             //æ£‹ç›˜å¤§å°ä¿®æ”¹
+#define COL 5            //æ£‹ç›˜å¤§å°ä¿®æ”¹
+//åˆå§‹åŒ–
 
 void initBoard(char board[ROW][COL], int row, int col);
 
-//´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 
 void displayBoard(char board[ROW][COL], int row, int col);
 
-//Íæ¼ÒÏÂÆå (*)
+//ç©å®¶ä¸‹æ£‹ (*)
 
 void PlayerMove(char board[ROW][COL], int row, int col);
 
-//µçÄÔÏÂÆå (#)
+//ç”µè„‘ä¸‹æ£‹ (#)
 
 void ComputerMove(char board[ROW][COL], int row, int col);
 /*
-ÓĞÃ»ÓĞÈËÓ®ÁË
-     *     Íæ¼ÒÓ®ÁË
-     #     µçÄÔÓ®ÁË
-     e     Æ½¾Ö
-     c     ÓÎÏ·Ã»½áÊø£¬¼ÌĞø
+æœ‰æ²¡æœ‰äººèµ¢äº†
+     *     ç©å®¶èµ¢äº†
+     #     ç”µè„‘èµ¢äº†
+     e     å¹³å±€
+     c     æ¸¸æˆæ²¡ç»“æŸï¼Œç»§ç»­
 */
 
 char IsWin(char board[ROW][COL], int row, int col);
 
+//åˆ¤æ–­æ£‹ç›˜æ˜¯å¦æ»¡äº†ä¸”æ²¡æœ‰äººèµ¢
 int IsFull(char board[ROW][COL], int row, int col);
 
