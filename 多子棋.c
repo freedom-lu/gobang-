@@ -15,52 +15,51 @@ void manu()
 void game()
 {
 	char board[ROW][COL];
-	initBoard(board, ROW, COL);   //¸³³õÊ¼»¯Öµ
-	displayBoard(board, ROW, COL);   //´òÓ¡Èı×ÓÆåÆåÅÌ
-	char estimate;  //ÅĞ¶ÏÓÎÏ·ÊÇ·ñ½áÊø
+	initBoard(board, ROW, COL);   //èµ‹åˆå§‹åŒ–å€¼
+	displayBoard(board, ROW, COL);   //æ‰“å°ä¸‰å­æ£‹æ£‹ç›˜
+	char estimate;  //åˆ¤æ–­æ¸¸æˆæ˜¯å¦ç»“æŸ
 	while (1)
 	{
-		//Íæ¼ÒÏÂÆå
+		//ç©å®¶ä¸‹æ£‹
 		PlayerMove(board, ROW, COL);       
-		displayBoard(board, ROW, COL);   //´òÓ¡Èı×ÓÆåÆåÅÌ
-		estimate = IsWin(board, ROW, COL);  //ÅĞ¶ÏÊÇ·ñÓ®ÁË Íæ¼ÒÓ®·µ»Ø*£¬µçÄÔ#£¬Æ½¾Öe£¬»¹Ã»½áÊøc
-		if (estimate != 'c')   //Èç¹û·µ»ØÖµ²»ÊÇc,´ú±íÓÎÏ·½áÊø£¬breakÌø³öÑ­»·
+		displayBoard(board, ROW, COL);   //æ‰“å°ä¸‰å­æ£‹æ£‹ç›˜
+		estimate = IsWin(board, ROW, COL);  //åˆ¤æ–­æ˜¯å¦èµ¢äº† ç©å®¶èµ¢è¿”å›*ï¼Œç”µè„‘#ï¼Œå¹³å±€eï¼Œè¿˜æ²¡ç»“æŸc
+		if (estimate != 'c')   //å¦‚æœè¿”å›å€¼ä¸æ˜¯c,ä»£è¡¨æ¸¸æˆç»“æŸï¼Œbreakè·³å‡ºå¾ªç¯
 		{
 			break;
 		}
-		//µçÄÔÏÂÆå
+		//ç”µè„‘ä¸‹æ£‹
 		ComputerMove(board, ROW, COL);
-		displayBoard(board, ROW, COL);   //´òÓ¡Èı×ÓÆåÆåÅÌ
+		displayBoard(board, ROW, COL);   //æ‰“å°ä¸‰å­æ£‹æ£‹ç›˜
 		estimate = IsWin(board, ROW, COL);
 		if (estimate != 'c')   
 			break;
 	}
-	printf("%d\n", estimate);
 	if (estimate == '*')
 	{
-		printf("Íæ¼ÒÓ®ÁË\n");
+		printf("ç©å®¶èµ¢äº†\n");
 	}
 	if (estimate == '#')
 	{
-		printf("µçÄÔÓ®ÁË\n");
+		printf("ç”µè„‘èµ¢äº†\n");
 	}
 	if (estimate == 'E')
 	{
-		printf("Æ½¾Ö\n");
+		printf("å¹³å±€\n");
 	}
-	displayBoard(board, ROW, COL);   //´òÓ¡Èı×ÓÆåÆåÅÌ
+	displayBoard(board, ROW, COL);   //æ‰“å°ä¸‰å­æ£‹æ£‹ç›˜
 
 }
 int main()
 {
 	int input;
-	srand((unsigned int)time(NULL));   //Ëæ»úÊıÉú³ÉÆ÷
+	srand((unsigned int)time(NULL));   //éšæœºæ•°ç”Ÿæˆå™¨
 	do
 	{
 		manu();
 		printf("enter->");
 		scanf("%d", &input);
-		switch (input)  //ÅĞ¶ÏÓÃ»§Ïë²»ÏëÍæÓÎÏ·
+		switch (input)  //åˆ¤æ–­ç”¨æˆ·æƒ³ä¸æƒ³ç©æ¸¸æˆ
 		{
 		case 1:
 			game();
