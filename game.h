@@ -30,7 +30,6 @@ void ComputerMove(char board[ROW][COL], int row, int col);
 */
 
 char IsWin(char board[ROW][COL], int row, int col);
-
-//判断棋盘是否满了且没有人赢
+//判断是否平局
 int IsFull(char board[ROW][COL], int row, int col);
 
